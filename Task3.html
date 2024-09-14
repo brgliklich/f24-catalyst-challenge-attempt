@@ -62,12 +62,14 @@
             const createdTodo = todoInput.value.trim();
             
             // Add non-empty string todos to the todo list
-            // YOUR CODE HERE 
+         
 
             // reset the input value after add todo is clicked.
-            todoInput.value = '';
+            if (createdTodo) {
+                addTodo(createdTodo); // Call the addTodo function
+                todoInput.value = ''; // Reset the input value
+            }
         });
-        
         // This re-renders the list of items displayed on the webpage based on the new todoList
         function refreshTodoList() {
             
@@ -88,15 +90,15 @@
             });
         }
 
-        function deleteTodo(index) {
-            // YOUR CODE HERE (recycle your work from former tasks)
-            refreshTodoList()
-        }
+     function deleteTodo(index) {
+        todoList.splice(index, 1);
+        refreshTodoList();
+}
 
-        function addTodo(todo) {
-            // YOUR CODE HERE (recycle your work from former tasks)
-            refreshTodoList()
-        }
+    function addTodo(todo) {
+        todoList.push(todo);
+       refreshTodoList();
+    }     
     </script>
 </body>
 </html>

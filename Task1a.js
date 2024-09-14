@@ -21,9 +21,12 @@ const todoList = [];
  * 3. Have dinner with my suite
  * 
  */
-function addAndPrintTodos() {
-    // YOUR CODE HERE
+function addAndPrintTodos(todoItem) {
+    let itemCount = todoList.length + 1;
+    todoList.push(`${itemCount}. ${todoItem}`);
+    console.log(todoList[todoList.length - 1]);
 }
+
 
 /**
  * Main is considered the entry point to a procedural program. Within y/cs,
@@ -31,8 +34,17 @@ function addAndPrintTodos() {
  * we do it here
  */
 function mainTask1a() {
-    addAndPrintTodos()
+    addAndPrintTodos("Apply to y/cs");
+    addAndPrintTodos("Pick out my classes");
+    addAndPrintTodos("Have dinner with my suite");
 }
+
+// This bit of code ensures that a main method exists! If it doesn't, then it throws an error
+//if (require.main === module) {
+    // unlike other languages like Java, there is no built in main method. We use a funciton called
+    // main by convention.
+  //  mainTask1a();
+//}
 
 // This bit of code ensures that a main method exists! If it doesn't, then it throws an error
 if (require.main === module) {
